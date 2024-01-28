@@ -27,6 +27,8 @@ var winnerToMiniGame = {
 func _ready():
 	rng.randomize()
 	pass # Replace with function body.
+	$Timer.start()
+	$Timer/countdown/countdown_anim.play("countdown_anim")
 
 func start_mini_game(minigame):
 	GlobalSceneManager.goto_scene(minigame)
@@ -94,3 +96,9 @@ func _process(delta):
 		player_1_choice = ""
 		player_2_choice = ""
 		
+
+
+func _on_Timer_timeout():
+	$Timer.start()
+	$Timer/countdown/countdown_anim.stop()
+	$Timer/countdown/countdown_anim.play("countdown_anim")
