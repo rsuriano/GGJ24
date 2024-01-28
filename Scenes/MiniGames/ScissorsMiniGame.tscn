@@ -30,7 +30,7 @@ wait_time = 10.0
 one_shot = true
 
 [node name="GameoverTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 3.0
 one_shot = true
 
 [node name="Countdown" parent="." instance=ExtResource( 4 )]

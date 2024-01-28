@@ -89,10 +89,10 @@ script = ExtResource( 3 )
 papermob_scene = ExtResource( 5 )
 
 [node name="SpawnCooldownTimer" type="Timer" parent="PaperMobs"]
-wait_time = 0.5
+wait_time = 1.3
 
 [node name="GameoverTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 3.0
 one_shot = true
 
 [node name="Countdown" parent="." instance=ExtResource( 2 )]
