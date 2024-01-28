@@ -12,4 +12,5 @@ func _ready():
 	new_game()
 
 func _on_Countdown_Timer_timeout():
-	game_over()
+	pass
+#	game_over()

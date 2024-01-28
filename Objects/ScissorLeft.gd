@@ -14,7 +14,7 @@ func get_input():
 	if (close and not closing):
 		closing = true
 		$Timer.start()
-		$tijera_bot/bot_anim.play("bot_anim")
+		$"../Graphics".close_sci()
 		velocity.x = close_speed
 
 func _physics_process(delta):

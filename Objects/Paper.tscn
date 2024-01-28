@@ -1,10 +1,7 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Objects/Paper.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/ScissorsMiniGame/animacion_ful.png" type="Texture" id=2]
-
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 40, 60 )
 
 [sub_resource type="Animation" id=6]
 length = 0.001
@@ -19,6 +16,30 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../CollisionPolygon2D:polygon")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ PoolVector2Array( -18, 10, -19, 5, -15, -25, -7, -36, -2, -52, 13, -48, 12, -38, 22, -25, 24, -1, 29, 8, 26, 14, 28, 34, 33, 44, 24, 45, 19, 25, 0, 15, -15, 29, -24, 42, -32, 43, -31, 37, -25, 29 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../CollisionPolygon2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -52,17 +73,41 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("../CollisionPolygon2D:polygon")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ PoolVector2Array( -18, 10, -19, 5, -19, -6, -15, -25, -7, -36, -2, -52, 13, -48, 12, -38, 22, -25, 24, -1, 29, 8, 26, 14, 28, 34, 33, 44, 24, 45, 19, 25, 0, 15, -15, 29, -24, 42, -32, 43, -31, 37, -25, 29 ), PoolVector2Array( -18, 10, -16, -35, -34, -25, -11, -70, 2, -69, 13, -52, 23, -44, 29, -30, 24, -1, 29, 8, 26, 14, 28, 34, 33, 44, 24, 45, 19, 25, 0, 15, -15, 29, -24, 42, -32, 43, -31, 37, -25, 29 ), PoolVector2Array( -14, -34, -47, -38, -48, -47, -11, -70, 2, -69, 13, -52, 38, -49, 42, -41, 15, -18, 29, 8, 26, 14, 23, 27, 20, 37, 11, 43, 13, 24, 5, 19, -3, 34, -8, 43, -24, 26, -27, 3, -11, -15 ), PoolVector2Array( -14, -34, -27, -44, -10, -58, -1, -76, 9, -72, 17, -61, 31, -49, 26, -38, 23, -26, 34, -11, 37, 7, 35, 13, 30, 14, 28, 12, 25, 11, 23, 7, 24, -5, 12, -4, -5, -5, -18, 22, -30, 18, -31, -8, -20, -22 ), PoolVector2Array( -17, -34, -18, -46, -10, -58, -1, -76, 9, -72, 17, -61, 27.3333, -48.6667, 24, -38, 30, -35, 39, -34, 61, -38, 58, -23, 41, -18, 30, -15, 24, -15, 20, -13, 14, -13, 7, -10, -10, -10, -21, -14, -48, -27, -45, -34, -23, -29 ), PoolVector2Array( -17, -34, -18, -46, -10, -58, -1, -76, 9, -72, 17, -61, 27.3333, -48.6667, 24, -38, 30, -35, 39, -34, 55, -50, 54, -32, 41, -18, 30, -15, 24, -15, 20, -13, 14, -13, 7, -10, -10, -10, -21, -14, -44, -38, -38, -46, -23, -29 ), PoolVector2Array( -14, -34, -13, -47, -10, -58, -1, -76, 9, -72, 17, -61, 20, -48, 20, -38, 23, -26, 34, -11, 37, 7, 35, 13, 30, 14, 28, 12, 25, 11, 23, 7, 24, -5, 12, -4, -5, -5, -18, 22, -30, 18, -31, -8, -20, -22 ), PoolVector2Array( -3, -38, -12, -43, -10, -58, -7, -76, 9, -72, 17, -61, 23, -50, 25, -43, 20, -36, 18, -32, 17, -27, 18, -21, 20, -12, 23, -1, 25, 11, 28, 22, 33, 53, 28, 62, 13, 65, -9, 18, -11, -1, -7, -16, -6, -27 ), PoolVector2Array( -18, -32, -12, -43, -10, -58, -2, -58, 6, -58, 7, -48, 13, -44, 16, -41, 17, -36, 18, -32, 17, -27, 18, -21, 20, -12, 23, -1, 25, 11, 28, 22, 33, 53, 24, 57, 10, 63, -9, 18, -11, -1, -7, -16, -16, -25 ), PoolVector2Array( -18, 10, -19, 5, -15, -25, -7, -36, -2, -52, 13, -48, 12, -38, 22, -25, 24, -1, 29, 8, 26, 14, 28, 34, 33, 44, 24, 45, 19, 25, 0, 15, -15, 29, -24, 42, -32, 43, -31, 37, -25, 29 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../CollisionPolygon2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 3, 4 ), Vector2( 6, -14 ), Vector2( 3, -34 ), Vector2( 3, -34 ), Vector2( 5, -49 ), Vector2( 5, -49 ), Vector2( 3, -34 ), Vector2( 5, -31 ), Vector2( 5, -31 ), Vector2( 3, 3 ) ]
+}
 
 [node name="Paper" type="KinematicBody2D"]
 input_pickable = true
 script = ExtResource( 1 )
 gravity = 1205
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 5 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -18, 10, -19, 5, -15, -25, -7, -36, -2, -52, 13, -48, 12, -38, 22, -25, 24, -1, 29, 8, 26, 14, 28, 34, 33, 44, 24, 45, 19, 25, 0, 15, -15, 29, -24, 42, -32, 43, -31, 37, -25, 29 )
 
 [node name="tipo" type="Sprite" parent="."]
-position = Vector2( 16, -33 )
+position = Vector2( 18, -30 )
 scale = Vector2( 0.301923, 0.301923 )
 texture = ExtResource( 2 )
 hframes = 6

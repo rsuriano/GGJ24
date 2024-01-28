@@ -6,12 +6,14 @@ export (int) var gravity = 1200
 var velocity = Vector2()
 var jumping = false
 var double_jump = false
+var closing = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
 	
 func get_input():
+	
 	var jump = Input.is_action_just_pressed("p2_up")
 
 	if (jump and is_on_floor()):

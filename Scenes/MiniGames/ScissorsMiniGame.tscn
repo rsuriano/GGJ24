@@ -1,13 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Objects/ScissorWall.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Floor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Objects/Paper.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Objects/ScissorLeft.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/MiniGames/ScissorsMiniGame.gd" type="Script" id=5]
 [ext_resource path="res://Objects/Countdown.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Objects/ScissorRight.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Objects/ScissorRight.gd" type="Script" id=8]
+[ext_resource path="res://Objects/ScissorsGraphics.tscn" type="PackedScene" id=9]
 
 [node name="Tijeras" type="Node2D"]
 position = Vector2( 510, 464 )
@@ -16,27 +13,14 @@ script = ExtResource( 5 )
 [node name="Floor" parent="." instance=ExtResource( 2 )]
 position = Vector2( 5, -86 )
 
-[node name="ScissorLeft" parent="." instance=ExtResource( 4 )]
-position = Vector2( -75, -112 )
-input_pickable = true
-close_speed = 225
+[node name="Graphics" parent="." instance=ExtResource( 9 )]
+position = Vector2( -81, -103 )
 
-[node name="ScissorLeftWall" parent="." instance=ExtResource( 1 )]
-position = Vector2( -181, -37 )
-
-[node name="ScissorRightWall" parent="." instance=ExtResource( 1 )]
-position = Vector2( 191, -44 )
+[node name="Paper" parent="." instance=ExtResource( 3 )]
+position = Vector2( -31, -53 )
 
 [node name="Countdown" parent="." instance=ExtResource( 6 )]
 
 [node name="StartTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 10.0
 one_shot = true
-
-[node name="ScissorRight" parent="." instance=ExtResource( 7 )]
-position = Vector2( -37, -99 )
-script = ExtResource( 8 )
-close_speed = 2800
-
-[node name="Paper" parent="." instance=ExtResource( 3 )]
-position = Vector2( -29, -60 )
