@@ -5,4 +5,5 @@ func _ready():
 	pass # Replace with function body.
 
 func _process(delta):
-	$Label.text="%02d" %$Timer.time_left
+	pass
+#	$Label.text="%02d" %$Timer.time_left
