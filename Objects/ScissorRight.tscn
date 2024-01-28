@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Objects/ScissorLeft.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Sprites/ScissorsMiniGame/bot_sheet.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/ScissorsMiniGame/top_sheet.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 14.5, 48 )
@@ -10,7 +10,7 @@ extents = Vector2( 14.5, 48 )
 extents = Vector2( 12, 43 )
 
 [sub_resource type="Animation" id=8]
-length = 1.1
+length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -18,14 +18,14 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
 }
 
 [sub_resource type="Animation" id=9]
-resource_name = "bot_anim"
+resource_name = "top_anim"
 length = 1.1
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
@@ -40,7 +40,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
 }
 
-[node name="ScissorLeft" type="KinematicBody2D"]
+[node name="Scissor" type="KinematicBody2D"]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource( 1 )
@@ -58,14 +58,14 @@ one_shot = true
 position = Vector2( 2, 1 )
 shape = SubResource( 7 )
 
-[node name="tijera_bot" type="Sprite" parent="."]
+[node name="tijera_top" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 hframes = 5
 vframes = 2
 
-[node name="bot_anim" type="AnimationPlayer" parent="tijera_bot"]
+[node name="top_anim" type="AnimationPlayer" parent="tijera_top"]
 anims/RESET = SubResource( 8 )
-anims/bot_anim = SubResource( 9 )
+anims/top_anim = SubResource( 9 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

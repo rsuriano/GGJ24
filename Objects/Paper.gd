@@ -16,10 +16,14 @@ func get_input():
 
 	if (jump and is_on_floor()):
 		velocity.y = jump_speed
+		$tipo/tipo_anims.stop()
+		$tipo/tipo_anims.play("salto_anim")
 		jumping = true
 
 	if (jump and is_on_floor() or jump and double_jump):
 		velocity.y = jump_speed/2
+		$tipo/tipo_anims.stop()
+		$tipo/tipo_anims.play("salto_anim")
 		double_jump = false
 
 func _physics_process(delta):

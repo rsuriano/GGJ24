@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sciss.png-cf0ee83315198aa3519a88ee6603751c.stex"
+path="res://.import/scissors_minigame_platform.png-635c0c74d7ff1bce299c6994f23b73ab.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/ScissorsMiniGame/sciss.png"
-dest_files=[ "res://.import/sciss.png-cf0ee83315198aa3519a88ee6603751c.stex" ]
+source_file="res://Assets/Sprites/ScissorsMiniGame/scissors_minigame_platform.png"
+dest_files=[ "res://.import/scissors_minigame_platform.png-635c0c74d7ff1bce299c6994f23b73ab.stex" ]
 
 [params]
 
