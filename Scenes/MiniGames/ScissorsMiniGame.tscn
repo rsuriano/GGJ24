@@ -20,7 +20,7 @@ texture = ExtResource( 1 )
 position = Vector2( 1, -161 )
 
 [node name="Graphics" parent="." instance=ExtResource( 9 )]
-position = Vector2( -68, -206 )
+position = Vector2( -69, -173 )
 
 [node name="Paper" parent="." instance=ExtResource( 3 )]
 position = Vector2( -14, -128 )

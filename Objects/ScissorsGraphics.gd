@@ -6,7 +6,8 @@ var closing = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$bottom_blade/tijera_bot/bot_anim.playback_speed = 2
+	$top_blade/tijera_top/top_anim.playback_speed = 2
 
 func close_sci():
 	$bottom_blade/tijera_bot/bot_anim.play("bot_anim")
