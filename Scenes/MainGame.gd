@@ -77,7 +77,7 @@ func _process(delta):
 		
 	if winner_player and not main_game_played:
 		main_game_played = true
-		print(winner_player)
+#		print(winner_player)
 		if winner_player == 'player_1':
 			GlobalSceneManager.players_data["player_1"]["is_boss"] = true
 			GlobalSceneManager.players_data["player_2"]["is_boss"] = false
@@ -90,15 +90,48 @@ func _process(delta):
 			
 		GlobalSceneManager.players_data["player_1"].figure = player_1_choice
 		GlobalSceneManager.players_data["player_2"].figure = player_2_choice
-		start_mini_game(winnerToMiniGame[winner_player][winner_figure])
-		
-		winner_player = ""
-		player_1_choice = ""
-		player_2_choice = ""
 		
 
+func show_results():
+#	print(player_1_choice, player_2_choice)
+	
+	$Title2.visible = false
+	
+	if player_1_choice == "rock":
+		$ManoP1/Piedra.visible = true
+		
+	if player_1_choice == "paper":
+		$ManoP1/Papel.visible = true
+	
+	if player_1_choice == "scissors":
+		$ManoP1/Tijera.visible = true
+
+	if player_2_choice == "rock":
+		$ManoP2/Piedra.visible = true
+		
+	if player_2_choice == "paper":
+		$ManoP2/Papel.visible = true
+	
+	if player_2_choice == "scissors":
+		$ManoP2/Tijera.visible = true
+
+	$timerBuffer.start()
 
 func _on_Timer_timeout():
-	$Timer.start()
-	$Timer/countdown/countdown_anim.stop()
-	$Timer/countdown/countdown_anim.play("countdown_anim")
+	print("player1: ")
+	print(player_1_choice)
+	print("player2: ")
+	print(player_2_choice)
+	print("-----")
+	
+	if player_1_choice != "" and player_2_choice != "":
+		show_results()
+		$Timer/countdown.visible = false
+		
+#	else:
+#		$Timer.start()
+#		$Timer/countdown/countdown_anim.stop()
+#		$Timer/countdown/countdown_anim.play("countdown_anim")
+
+func _on_timerBuffer_timeout():
+	start_mini_game(winnerToMiniGame[winner_player][winner_figure])
