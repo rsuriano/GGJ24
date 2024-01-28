@@ -2,6 +2,7 @@ extends Node2D
 
 signal game_over
 
+var winner = ""
 var spaceship_lives = 0
 
 func new_game():
@@ -18,6 +19,7 @@ func game_over():
 	$GameoverTimer.start()
 	
 func _on_spaceship_destroyed():
+	winner = "boss"
 	game_over()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -41,4 +43,8 @@ func _on_up_body_entered(body):
 		body.queue_free()
 
 func _on_GameoverTimer_timeout():
-	emit_signal("game_over")
+	emit_signal("game_over", winner)
+
+func _on_Countdown_countdown_over():
+	winner = "mob"
+	game_over()
