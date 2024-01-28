@@ -9,6 +9,5 @@ func _ready():
 func _process(delta):
 	$Label.text="%02d" %$Timer.time_left
 
-
 func _on_Timer_timeout():
 	emit_signal("countdown_over")

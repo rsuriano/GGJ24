@@ -5,7 +5,7 @@ signal game_over(winner)
 var winner = ""
 
 func new_game():
-	pass
+	$Countdown/Timer.start()
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -27,5 +27,6 @@ func _on_GameoverTimer_timeout():
 	emit_signal("game_over", winner)
 
 func _on_Countdown_countdown_over():
+	print("winner")
 	winner = "mob"
 	game_over()
