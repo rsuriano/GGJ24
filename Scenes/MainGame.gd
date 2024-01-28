@@ -118,10 +118,10 @@ func show_results():
 	if player_2_choice == "scissors":
 		$ManoP2/Tijera.visible = true
 
-	$timerBuffer.start()
 
 func _on_Timer_timeout():
 	if player_1_choice != "" and player_2_choice != "":
+		
 		show_results()
 		$Timer/countdown.visible = false
 		
@@ -130,5 +130,5 @@ func _on_Timer_timeout():
 		$Timer/countdown/countdown_anim.stop()
 		$Timer/countdown/countdown_anim.play("countdown_anim")
 
-func _on_timerBuffer_timeout():
+func _on_homebg2_anim_animation_finished(anim_name):
 	start_mini_game(winnerToMiniGame[winner_player][winner_figure])
