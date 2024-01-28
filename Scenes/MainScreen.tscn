@@ -123,3 +123,4 @@ anims/RESET = SubResource( 4 )
 [connection signal="button_up" from="StartButton" to="." method="_on_Button_button_up"]
 [connection signal="animation_finished" from="StartButton/Start_Boton/StartBoton_anim" to="." method="_on_StartBoton_anim_animation_finished"]
 [connection signal="button_up" from="CreditsButton" to="." method="_on_CreditsButton_button_up"]
+[connection signal="animation_finished" from="CreditsButton/credits_boton/creditsboton_anim" to="." method="_on_creditsboton_anim_animation_finished"]
