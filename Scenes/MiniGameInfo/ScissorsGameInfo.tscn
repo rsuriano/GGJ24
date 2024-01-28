@@ -1,0 +1,3 @@
+[gd_scene format=2]
+
+[node name="ScissorsGameInfo" type="Node2D"]

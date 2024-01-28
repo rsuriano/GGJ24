@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Objects/ScissorLeft.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sprites/sciss.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 14.5, 48 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 12, 43 )
+
+[node name="Scissor" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 4.76837e-07, 0 )
+scale = Vector2( 1.75, 1.69298 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 6 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 2, 1 )
+shape = SubResource( 7 )
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

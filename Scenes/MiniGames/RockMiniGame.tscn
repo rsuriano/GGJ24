@@ -1,0 +1,112 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Objects/MeteorCannon.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Sprites/heart.png" type="Texture" id=2]
+[ext_resource path="res://Objects/ScissorSpaceship.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/MiniGames/RockMiniGame.gd" type="Script" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 56.5, 322.5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 554, 27 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 22.5, 314 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 794.5, 16 )
+
+[node name="RockMiniGame" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Limits" type="Node2D" parent="."]
+
+[node name="SpaceshipBounds" type="Node2D" parent="Limits"]
+
+[node name="left" type="StaticBody2D" parent="Limits/SpaceshipBounds"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limits/SpaceshipBounds/left"]
+position = Vector2( -57, 292.5 )
+shape = SubResource( 1 )
+
+[node name="right" type="StaticBody2D" parent="Limits/SpaceshipBounds"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limits/SpaceshipBounds/right"]
+position = Vector2( 1082, 291 )
+shape = SubResource( 1 )
+
+[node name="up" type="StaticBody2D" parent="Limits/SpaceshipBounds"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limits/SpaceshipBounds/up"]
+position = Vector2( 522, -26 )
+shape = SubResource( 2 )
+
+[node name="down" type="StaticBody2D" parent="Limits/SpaceshipBounds"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limits/SpaceshipBounds/down"]
+position = Vector2( 517, 626 )
+shape = SubResource( 2 )
+
+[node name="MeteorBounds" type="Node2D" parent="Limits"]
+
+[node name="left" type="StaticBody2D" parent="Limits/MeteorBounds"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limits/MeteorBounds/left"]
+position = Vector2( -23, 284 )
+shape = SubResource( 3 )
+
+[node name="right" type="StaticBody2D" parent="Limits/MeteorBounds"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limits/MeteorBounds/right"]
+position = Vector2( 1048, 296 )
+shape = SubResource( 3 )
+
+[node name="up" type="Area2D" parent="Limits/MeteorBounds"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limits/MeteorBounds/up"]
+position = Vector2( 531, -121 )
+shape = SubResource( 4 )
+
+[node name="down" type="Area2D" parent="Limits/MeteorBounds"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limits/MeteorBounds/down"]
+position = Vector2( 569, 720 )
+shape = SubResource( 4 )
+
+[node name="MeteorCannon" parent="." instance=ExtResource( 1 )]
+position = Vector2( 510, 690 )
+
+[node name="ScissorSpaceship" parent="." instance=ExtResource( 3 )]
+position = Vector2( 282, 262 )
+rotation = 1.5708
+
+[node name="ScissorLives" type="Node2D" parent="."]
+
+[node name="Heart" type="Sprite" parent="ScissorLives"]
+position = Vector2( 40, 40 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 2 )
+
+[node name="Heart2" type="Sprite" parent="ScissorLives"]
+position = Vector2( 100, 40 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 2 )
+
+[node name="Heart3" type="Sprite" parent="ScissorLives"]
+position = Vector2( 160, 40 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 2 )
+
+[connection signal="area_entered" from="Limits/MeteorBounds/up" to="." method="_on_up_area_entered"]
+[connection signal="body_entered" from="Limits/MeteorBounds/up" to="." method="_on_up_body_entered"]
+[connection signal="area_entered" from="Limits/MeteorBounds/down" to="." method="_on_up_area_entered"]
+[connection signal="body_entered" from="Limits/MeteorBounds/down" to="." method="_on_up_body_entered"]
