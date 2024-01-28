@@ -34,6 +34,7 @@ wait_time = 3.0
 one_shot = true
 
 [node name="Countdown" parent="." instance=ExtResource( 4 )]
+visible = false
 
 [connection signal="timeout" from="GameoverTimer" to="." method="_on_GameoverTimer_timeout"]
 [connection signal="countdown_over" from="Countdown" to="." method="_on_Countdown_countdown_over"]

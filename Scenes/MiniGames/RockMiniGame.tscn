@@ -158,6 +158,7 @@ wait_time = 3.0
 one_shot = true
 
 [node name="Countdown" parent="." instance=ExtResource( 6 )]
+visible = false
 
 [connection signal="area_entered" from="Limits/MeteorBounds/up" to="." method="_on_up_area_entered"]
 [connection signal="body_entered" from="Limits/MeteorBounds/up" to="." method="_on_up_body_entered"]

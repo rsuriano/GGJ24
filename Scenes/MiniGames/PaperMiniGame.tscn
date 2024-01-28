@@ -96,6 +96,7 @@ wait_time = 3.0
 one_shot = true
 
 [node name="Countdown" parent="." instance=ExtResource( 2 )]
+visible = false
 
 [connection signal="body_entered" from="Floor" to="PaperMobs" method="_on_Floor_body_entered"]
 [connection signal="timeout" from="PaperMobs/SpawnCooldownTimer" to="PaperMobs" method="_on_SpawnCooldownTimer_timeout"]
