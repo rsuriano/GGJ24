@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/paperPlane.png-40e5e6995aa1420fa3e61ccf4e1ec25c.stex"
+path="res://.import/explosionsheet.png-f707432edcc1ec1c19898d2a63741fdc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/paperPlane.png"
-dest_files=[ "res://.import/paperPlane.png-40e5e6995aa1420fa3e61ccf4e1ec25c.stex" ]
+source_file="res://Assets/Spritesheets/explosionsheet.png"
+dest_files=[ "res://.import/explosionsheet.png-f707432edcc1ec1c19898d2a63741fdc.stex" ]
 
 [params]
 

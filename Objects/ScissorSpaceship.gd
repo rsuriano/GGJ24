@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
-export (int) var speed = 400
-export (float) var rotation_speed = 5
+export (int) var speed = 200
+export (float) var rotation_speed = 3.0
 
 export (int) var lives = 3
 
@@ -23,14 +23,30 @@ func get_input():
 
 func _physics_process(delta):
 	get_input()
-	rotation += rotation_dir * rotation_speed * delta
-	move_and_slide(velocity)
+	
+	if $Nave.visible:
+		rotation += rotation_dir * rotation_speed * delta
+		move_and_slide(velocity)
 
-func _process(delta):
+func _process(_delta):
 	if lives <= 0:
-		print("THE ROCK EMPIRE WON")
+		
+		if $Nave.visible:
+			
+			$".".velocity = Vector2.ZERO
+			$Nave.visible = false
+			
+			$Explosion.visible = true
+			$Explosion.init()
+			
+			print("THE ROCK EMPIRE WON")
 
 func _on_Area2D_body_entered(body):
 	if body.get_parent().name == "Meteors":
 		body.queue_free()
 		lives -= 1
+
+
+func _on_explosion_anim_animation_finished(anim_name):
+	print(anim_name)
+	print("go to game over screen")

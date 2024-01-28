@@ -1,3 +1,5 @@
 [gd_scene format=2]
 
 [node name="MainGame" type="Node2D"]
+
+[node name="Player1" type="Node2D" parent="."]

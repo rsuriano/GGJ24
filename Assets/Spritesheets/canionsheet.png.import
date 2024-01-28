@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/meteor_cannon.png-214ce6347bee68e7b246d1119cabf239.stex"
+path="res://.import/canionsheet.png-671b179821cd4d78a92c79b2e583e718.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/meteor_cannon.png"
-dest_files=[ "res://.import/meteor_cannon.png-214ce6347bee68e7b246d1119cabf239.stex" ]
+source_file="res://Assets/Spritesheets/canionsheet.png"
+dest_files=[ "res://.import/canionsheet.png-671b179821cd4d78a92c79b2e583e718.stex" ]
 
 [params]
 

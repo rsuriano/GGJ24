@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sciss.png-f5583954f1a5724b27240845e1c0c60c.stex"
+path="res://.import/canion_00000.png-78fcf766eb7d33aa77033e97d520f21c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/sciss.png"
-dest_files=[ "res://.import/sciss.png-f5583954f1a5724b27240845e1c0c60c.stex" ]
+source_file="res://Assets/Sprites/RockMiniGame/canion_00000.png"
+dest_files=[ "res://.import/canion_00000.png-78fcf766eb7d33aa77033e97d520f21c.stex" ]
 
 [params]
 
