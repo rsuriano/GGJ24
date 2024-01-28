@@ -23,13 +23,17 @@ func get_input():
 
 func _physics_process(delta):
 	get_input()
-	rotation += rotation_dir * rotation_speed * delta
-	move_and_slide(velocity)
+	
+	if $Nave.visible:
+		rotation += rotation_dir * rotation_speed * delta
+		move_and_slide(velocity)
 
 func _process(_delta):
 	if lives <= 0:
 		
 		if $Nave.visible:
+			
+			$".".velocity = Vector2.ZERO
 			$Nave.visible = false
 			
 			$Explosion.visible = true
