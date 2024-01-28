@@ -10,8 +10,8 @@ func _ready():
 func get_input():
 	velocity.x = 0
 	
-	var right = Input.is_action_pressed("p2_right")
-	var left = Input.is_action_pressed("p2_left")
+	var right = Input.is_action_pressed(GlobalSceneManager.keys_data["boss"]["right"])
+	var left = Input.is_action_pressed(GlobalSceneManager.keys_data["boss"]["left"])
 
 	if right:
 		velocity.x += paper_speed

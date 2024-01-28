@@ -34,6 +34,7 @@ var keys_data = {
 }
 
 func boss_p1_mob_p2():
+	print("boss_p1_mob_p2")
 	keys_data = {
 		"boss": {
 			"up": "p1_up",
@@ -52,6 +53,7 @@ func boss_p1_mob_p2():
 	}
 	
 func mob_p1_boss_p2():
+	print("mob_p1_boss_p2")
 	keys_data = {
 		"boss": {
 			"up": "p2_up",
@@ -95,4 +97,3 @@ func _on_game_over(winner): # boss mob
 func _ready():
 	var root = get_tree().root
 	current_scene = root.get_child(root.get_child_count() - 1)
-#	print(current_scene)

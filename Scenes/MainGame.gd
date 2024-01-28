@@ -41,7 +41,6 @@ func start_mini_game(minigame):
 func determineWinner():
 	if player_1_choice == player_2_choice:
 		var rnd = rng.randi_range(0, 1000)
-		print(rnd)
 		if rnd % 2 == 0:
 			winner_player = "player_1"
 			winner_figure = player_1_choice
@@ -82,7 +81,7 @@ func _process(delta):
 		
 	if winner_player and not main_game_played:
 		main_game_played = true
-#		print(winner_player)
+		print(winner_player)
 		if winner_player == 'player_1':
 			GlobalSceneManager.players_data["player_1"]["is_boss"] = true
 			GlobalSceneManager.players_data["player_2"]["is_boss"] = false

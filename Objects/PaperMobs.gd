@@ -18,7 +18,7 @@ func _on_papermob_collision_with_rock():
 	emit_signal("papermobs_collision_with_rock")
 	
 func get_input():
-	var spawn = Input.is_action_just_pressed("p2_action")
+	var spawn = Input.is_action_just_pressed(GlobalSceneManager.keys_data["boss"]["action"])
 	
 	if spawn:
 		var spawned_papermobs = get_children().size()

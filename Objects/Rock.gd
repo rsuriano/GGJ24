@@ -14,8 +14,8 @@ func _ready():
 func get_input():
 	velocity.x = 0
 	
-	var right = Input.is_action_pressed("p1_right")
-	var left = Input.is_action_pressed("p1_left")
+	var right = Input.is_action_pressed(GlobalSceneManager.keys_data["mob"]["right"])
+	var left = Input.is_action_pressed(GlobalSceneManager.keys_data["mob"]["left"])
 
 	if right:
 		velocity.x += rock_speed
