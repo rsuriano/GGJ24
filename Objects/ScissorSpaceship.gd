@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+signal spaceship_destroyed
+
 export (int) var speed = 200
 export (float) var rotation_speed = 3.0
 
@@ -22,7 +24,8 @@ func get_input():
 	#	velocity = Vector2(0, -speed).rotated(rotation)
 
 func _physics_process(delta):
-	get_input()
+	if not GlobalSceneManager.inputs_locked:
+		get_input()
 	
 	if $Nave.visible:
 		rotation += rotation_dir * rotation_speed * delta
@@ -48,6 +51,4 @@ func _on_Area2D_body_entered(body):
 
 
 func _on_explosion_anim_animation_finished(anim_name):
-	print(anim_name)
-	print("go to game over screen")
-	$"../GameoverTimer".start()
+	emit_signal("spaceship_destroyed")

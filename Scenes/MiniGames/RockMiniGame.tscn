@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Objects/MeteorCannon.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Sprites/RockMiniGame/heart.png" type="Texture" id=2]
 [ext_resource path="res://Objects/ScissorSpaceship.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/MiniGames/RockMiniGame.gd" type="Script" id=4]
 [ext_resource path="res://Assets/Background/bg_rock.png" type="Texture" id=5]
+[ext_resource path="res://Objects/Countdown.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Animation" id=5]
 length = 0.001
@@ -155,6 +156,10 @@ texture = ExtResource( 2 )
 [node name="GameoverTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="Countdown" parent="." instance=ExtResource( 6 )]
+position = Vector2( 512, 51 )
+scale = Vector2( 5, 5 )
 
 [connection signal="area_entered" from="Limits/MeteorBounds/up" to="." method="_on_up_area_entered"]
 [connection signal="body_entered" from="Limits/MeteorBounds/up" to="." method="_on_up_body_entered"]

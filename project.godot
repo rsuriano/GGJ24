@@ -11,8 +11,12 @@ config_version=4
 [application]
 
 config/name="GGJAM2024"
-run/main_scene="res://Scenes/MiniGames/ScissorsMiniGame.tscn"
+run/main_scene="res://Scenes/MainScreen.tscn"
 config/icon="res://Assets/Sprites/icon.png"
+
+[autoload]
+
+GlobalSceneManager="*res://GlobalSceneManager.gd"
 
 [gui]
 

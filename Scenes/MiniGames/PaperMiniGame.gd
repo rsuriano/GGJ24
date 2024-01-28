@@ -1,5 +1,7 @@
 extends Node2D
 
+signal game_over
+
 func new_game():
 	pass
 	
@@ -19,5 +21,4 @@ func _process(delta):
 	pass
 
 func _on_GameoverTimer_timeout():
-	get_tree().change_scene("res://Scenes/MainGame.tscn")	
-	pass # Replace with function body.
+	emit_signal("game_over")

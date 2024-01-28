@@ -38,7 +38,9 @@ func _input(_event):
 			$"../Meteors".add_child(meteor_instance)
 
 func _physics_process(delta):
-	get_input()
+	if not GlobalSceneManager.inputs_locked:
+		get_input()
+		
 	future_rotation = rotation + rotation_dir * rotation_speed * delta
 	
 	if future_rotation > deg2rad(MAXANGLE):

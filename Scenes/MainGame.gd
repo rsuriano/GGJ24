@@ -19,7 +19,7 @@ func _ready():
 	pass # Replace with function body.
 
 func start_mini_game(minigame, boss):
-	get_tree().change_scene(minigame)
+	GlobalSceneManager.goto_scene(minigame)
 
 func determineWinner():
 	if player_1_choice == player_2_choice:
@@ -27,10 +27,10 @@ func determineWinner():
 		player_1_choice = ""
 		player_2_choice = ""
 	elif (player_1_choice == "rock" and player_2_choice == "scissors") or (player_1_choice == "paper" and player_2_choice == "rock") or (player_1_choice == "scissors" and player_2_choice == "paper"):
-		winner_player = 'player1'
+		winner_player = 'player_1'
 		winner_figure = player_1_choice
 	else:
-		winner_player = 'player2'
+		winner_player = 'player_2'
 		winner_figure = player_2_choice
 
 func get_input():
@@ -59,5 +59,22 @@ func _process(delta):
 		
 	if winner_player and not main_game_played:
 		main_game_played = true
+		print(winner_player)
+		if winner_player == 'player_1':
+			GlobalSceneManager.players_data["player_1"]["is_boss"] = true
+			GlobalSceneManager.players_data["player_2"]["is_boss"] = false
+			GlobalSceneManager.boss_p1_mob_p2()
+		else: 
+			GlobalSceneManager.players_data["player_2"]["is_boss"] = true
+			GlobalSceneManager.players_data["player_1"]["is_boss"] = false
+			GlobalSceneManager.mob_p1_boss_p2()
+			
+		GlobalSceneManager.players_data["player_1"].figure = player_1_choice
+		GlobalSceneManager.players_data["player_2"].figure = player_2_choice
+		
 		start_mini_game(winnerToMiniGame[winner_figure], winner_player)
+		
+		winner_player = ""
+		player_1_choice = ""
+		player_2_choice = ""
 		

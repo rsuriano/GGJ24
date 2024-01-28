@@ -12,9 +12,8 @@ var closing = false
 func _ready():
 	pass
 	
-func get_input():
-	
-	var jump = Input.is_action_just_pressed("p2_up")
+func get_input():	
+	var jump = Input.is_action_just_pressed(GlobalSceneManager.keys_data["mob"]["up"])
 
 	if (jump and is_on_floor()):
 		velocity.y = jump_speed
@@ -29,7 +28,8 @@ func get_input():
 		double_jump = false
 
 func _physics_process(delta):
-	get_input()
+	if not GlobalSceneManager.inputs_locked:
+		get_input()
 	
 	velocity.y += gravity * delta
 	if jumping and is_on_floor():
