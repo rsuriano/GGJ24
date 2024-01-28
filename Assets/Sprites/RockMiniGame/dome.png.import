@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/meteor.webp-35c66a83b50edd16aa26b8e0a8d8d73d.stex"
+path="res://.import/dome.png-3ddc562a53a337f52e93d76a25f5ab96.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/meteor.webp"
-dest_files=[ "res://.import/meteor.webp-35c66a83b50edd16aa26b8e0a8d8d73d.stex" ]
+source_file="res://Assets/Sprites/RockMiniGame/dome.png"
+dest_files=[ "res://.import/dome.png-3ddc562a53a337f52e93d76a25f5ab96.stex" ]
 
 [params]
 

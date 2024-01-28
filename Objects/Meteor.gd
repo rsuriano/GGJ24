@@ -1,13 +1,13 @@
 extends RigidBody2D
 
-export (int) var speed = 400
+export (int) var speed = 200
 
 var initial_angle = 0
 var initial_position = Vector2(0, 0)
 
 func _ready():
-	position = initial_position
 	linear_velocity = Vector2(0, -speed).rotated(initial_angle)
+	position = initial_position
 	set_bounce(1)
 
 func init(parent_angle, parent_position):

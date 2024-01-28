@@ -26,7 +26,7 @@ func get_input():
 	if Input.is_action_pressed('p2_left'):
 		rotation_dir = -1
 
-func _input(event):
+func _input(_event):
 	if Input.is_action_just_pressed("p2_action"):
 		
 		if $"../Meteors".get_child_count() < MAXMETEOR:

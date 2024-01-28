@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/rock.png-0c0219717541df45f349d6d40ca3fa00.stex"
+path="res://.import/meteoro.png-8c1e021b403f654da195f59ef1beec87.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/rock.png"
-dest_files=[ "res://.import/rock.png-0c0219717541df45f349d6d40ca3fa00.stex" ]
+source_file="res://Assets/Sprites/RockMiniGame/meteoro.png"
+dest_files=[ "res://.import/meteoro.png-8c1e021b403f654da195f59ef1beec87.stex" ]
 
 [params]
 

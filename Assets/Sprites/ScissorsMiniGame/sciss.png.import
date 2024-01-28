@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/dome.png-01801677773be073129e6461cb65a7fd.stex"
+path="res://.import/sciss.png-cf0ee83315198aa3519a88ee6603751c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/dome.png"
-dest_files=[ "res://.import/dome.png-01801677773be073129e6461cb65a7fd.stex" ]
+source_file="res://Assets/Sprites/ScissorsMiniGame/sciss.png"
+dest_files=[ "res://.import/sciss.png-cf0ee83315198aa3519a88ee6603751c.stex" ]
 
 [params]
 

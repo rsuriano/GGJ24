@@ -1,11 +1,12 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Assets/Sprites/meteor_cannon.png" type="Texture" id=1]
-[ext_resource path="res://Assets/Sprites/dome.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/RockMiniGame/canion.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Sprites/RockMiniGame/canion_00000.png" type="Texture" id=2]
 [ext_resource path="res://Objects/MeteorCannon.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Sprites/RockMiniGame/luzR_canion_00000.png" type="Texture" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 734.032
+radius = 539.94
 
 [node name="MeteorCannon" type="Node2D"]
 
@@ -18,26 +19,35 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dome"]
+position = Vector2( 0, -7.55721 )
 shape = SubResource( 1 )
 
 [node name="DomeSprite" type="Sprite" parent="Dome"]
-position = Vector2( -9.30908, -72.738 )
-scale = Vector2( 3.09091, 3.08488 )
+position = Vector2( 0, -968.456 )
+scale = Vector2( 1.4, 1.4 )
 texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Dome"]
+position = Vector2( 8.93684, -118.27 )
+polygon = PoolVector2Array( -732.066, -12.4692, 723.874, -4.91202, 656.849, -80.4841, 504.18, -186.285, 388.747, -231.628, -434.175, -224.071, -553.332, -167.392, -661.317, -88.0413 )
+
+[node name="Sprite" type="Sprite" parent="Dome"]
+position = Vector2( 0, -726.625 )
+texture = ExtResource( 4 )
 
 [node name="Cannon" type="KinematicBody2D" parent="."]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource( 3 )
 
-[node name="MeteorSpawner" type="Node2D" parent="Cannon"]
-position = Vector2( 0, -253 )
-
 [node name="CannonSprite" type="Sprite" parent="Cannon"]
 position = Vector2( 0.100075, -220.95 )
 scale = Vector2( 0.268555, 0.264648 )
 texture = ExtResource( 1 )
 
+[node name="MeteorSpawner" type="Node2D" parent="Cannon"]
+position = Vector2( 0, -168 )
+
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Cannon"]
-position = Vector2( -514.4, -671.7 )
-polygon = PoolVector2Array( 468, 516, 560, 517, 548, 386, 482, 386 )
+position = Vector2( -513, -678 )
+polygon = PoolVector2Array( 483, 566, 544, 566, 552, 493, 474, 492 )

@@ -8,18 +8,18 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	spaceship_lives = $ScissorSpaceship.lives
 
-	if spaceship_lives == 2 and $ScissorLives/Heart3:
+	if spaceship_lives == 2 and $ScissorLives.get_child_count() > 2:
 		$ScissorLives/Heart3.queue_free()
 		# TODO: play sound
 		
-	if spaceship_lives == 1 and $ScissorLives/Heart2:
+	if spaceship_lives == 1 and $ScissorLives.get_child_count() > 1:
 		$ScissorLives/Heart2.queue_free()
 		# TODO: play sound
 	
-	if spaceship_lives == 0 and $ScissorLives/Heart:
+	if spaceship_lives == 0 and $ScissorLives.get_child_count() > 0:
 		$ScissorLives/Heart.queue_free()
 		# TODO: play sound
 
