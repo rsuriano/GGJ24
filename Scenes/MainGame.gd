@@ -9,16 +9,23 @@ var winner_figure = ""
 var main_game_played = false
 
 var winnerToMiniGame = {
-	"rock": "res://Scenes/MiniGames/RockMiniGame.tscn",
-	"paper": "res://Scenes/MiniGames/PaperMiniGame.tscn",
-	"scissors": "res://Scenes/MiniGames/ScissorsMiniGame.tscn"
+	"player_1": {
+		"rock": "res://Scenes/MiniGameInfo/RockGameInfo_P1P2.tscn",
+		"paper": "res://Scenes/MiniGameInfo/PaperGameInfo_P1P2.tscn",
+		"scissors": "res://Scenes/MiniGameInfo/ScissorsGameInfoP1P2.tscn"
+	},
+	"player_2": {
+		"rock": "res://Scenes/MiniGameInfo/RockGameInfo_P2P1.tscn",
+		"paper": "res://Scenes/MiniGameInfo/PaperGameInfo_P2P1.tscn",
+		"scissors": "res://Scenes/MiniGameInfo/ScissorsGameInfoP2P1.tscn"
+	}
 }
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
-func start_mini_game(minigame, boss):
+func start_mini_game(minigame):
 	GlobalSceneManager.goto_scene(minigame)
 
 func determineWinner():
@@ -69,10 +76,10 @@ func _process(delta):
 			GlobalSceneManager.players_data["player_1"]["is_boss"] = false
 			GlobalSceneManager.mob_p1_boss_p2()
 			
+			
 		GlobalSceneManager.players_data["player_1"].figure = player_1_choice
 		GlobalSceneManager.players_data["player_2"].figure = player_2_choice
-		
-		start_mini_game(winnerToMiniGame[winner_figure], winner_player)
+		start_mini_game(winnerToMiniGame[winner_player][winner_figure])
 		
 		winner_player = ""
 		player_1_choice = ""
