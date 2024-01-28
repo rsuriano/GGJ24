@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Assets/Background/maingame.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/MainGame.gd" type="Script" id=2]
@@ -8,7 +8,6 @@
 [ext_resource path="res://Assets/Menu/piedra.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Menu/papel.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Menu/countdown.png" type="Texture" id=8]
-[ext_resource path="res://Scenes/HomeBG2.gd" type="Script" id=9]
 
 [sub_resource type="Animation" id=4]
 length = 0.001
@@ -121,7 +120,6 @@ scale = Vector2( 0.551, 0.551 )
 texture = ExtResource( 3 )
 hframes = 7
 vframes = 5
-script = ExtResource( 9 )
 
 [node name="homebg2_anim" type="AnimationPlayer" parent="HomeBG2"]
 autoplay = "loophome2_anim"

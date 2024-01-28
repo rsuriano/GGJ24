@@ -17,5 +17,5 @@ func _ready():
 
 
 func _on_Timer_timeout():
-	print("timeout ")
+	print("timeout ")$"..".
 	$homebg2_anim.play("home2_transcision")

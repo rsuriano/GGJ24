@@ -124,6 +124,7 @@ func _on_Timer_timeout():
 		
 		show_results()
 		$Timer/countdown.visible = false
+		$HomeBG2/homebg2_anim.play("home2_transcision")
 		
 	else:
 		$Timer.start()
