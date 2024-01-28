@@ -10,8 +10,8 @@ config_version=4
 
 [application]
 
-config/name="GGJ2024"
-run/main_scene="res://Scenes/MiniGames/RockMiniGame.tscn"
+config/name="GGJAM2024"
+run/main_scene="res://Scenes/MiniGames/PaperMiniGame.tscn"
 config/icon="res://Assets/Sprites/icon.png"
 
 [gui]
