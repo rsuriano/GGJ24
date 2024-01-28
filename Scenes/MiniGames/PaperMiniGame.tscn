@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/MiniGames/PaperMiniGame.gd" type="Script" id=1]
+[ext_resource path="res://Objects/Countdown.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Objects/PaperMobs.gd" type="Script" id=3]
 [ext_resource path="res://Objects/PaperBoss.gd" type="Script" id=4]
 [ext_resource path="res://Objects/PaperMob.tscn" type="PackedScene" id=5]
@@ -94,6 +95,9 @@ wait_time = 0.5
 wait_time = 5.0
 one_shot = true
 
+[node name="Countdown" parent="." instance=ExtResource( 2 )]
+
 [connection signal="body_entered" from="Floor" to="PaperMobs" method="_on_Floor_body_entered"]
 [connection signal="timeout" from="PaperMobs/SpawnCooldownTimer" to="PaperMobs" method="_on_SpawnCooldownTimer_timeout"]
 [connection signal="timeout" from="GameoverTimer" to="." method="_on_GameoverTimer_timeout"]
+[connection signal="countdown_over" from="Countdown" to="." method="_on_Countdown_countdown_over"]

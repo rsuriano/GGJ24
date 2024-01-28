@@ -3,7 +3,7 @@
 [ext_resource path="res://Assets/Background/fondo tijeras.png" type="Texture" id=1]
 [ext_resource path="res://Objects/Floor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Objects/Paper.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/MiniGames/Countdown.gd" type="Script" id=4]
+[ext_resource path="res://Objects/Countdown.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/MiniGames/ScissorsMiniGame.gd" type="Script" id=5]
 [ext_resource path="res://Objects/ScissorsGraphics.tscn" type="PackedScene" id=9]
 
@@ -33,20 +33,7 @@ one_shot = true
 wait_time = 2.0
 one_shot = true
 
-[node name="Countdown" type="Node" parent="."]
-script = ExtResource( 4 )
-
-[node name="Timer" type="Timer" parent="Countdown"]
-wait_time = 20.0
-one_shot = true
-
-[node name="Label" type="Label" parent="Countdown"]
-margin_left = 494.0
-margin_top = 9.0
-margin_right = 534.0
-margin_bottom = 40.0
-text = "20
-"
+[node name="Countdown" parent="." instance=ExtResource( 4 )]
 
 [connection signal="timeout" from="GameoverTimer" to="." method="_on_GameoverTimer_timeout"]
-[connection signal="timeout" from="Countdown/Timer" to="." method="_on_Timer_timeout"]
+[connection signal="countdown_over" from="Countdown" to="." method="_on_Countdown_countdown_over"]
