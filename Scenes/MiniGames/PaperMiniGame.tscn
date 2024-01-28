@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/MiniGames/PaperMiniGame.gd" type="Script" id=1]
 [ext_resource path="res://Objects/Rock.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Objects/Rock.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Objects/PaperBoss.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Objects/PaperFloor.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Objects/Countdown.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 35.5, 300.5 )
@@ -46,6 +47,8 @@ papermob_scene = ExtResource( 5 )
 
 [node name="SpawnCooldownTimer" type="Timer" parent="PaperMobs"]
 wait_time = 0.5
+
+[node name="Countdown" parent="." instance=ExtResource( 9 )]
 
 [connection signal="body_entered" from="Floor" to="PaperMobs" method="_on_Floor_body_entered"]
 [connection signal="timeout" from="PaperMobs/SpawnCooldownTimer" to="PaperMobs" method="_on_SpawnCooldownTimer_timeout"]
