@@ -81,7 +81,6 @@ func _process(delta):
 		
 	if winner_player and not main_game_played:
 		main_game_played = true
-		print(winner_player)
 		if winner_player == 'player_1':
 			GlobalSceneManager.players_data["player_1"]["is_boss"] = true
 			GlobalSceneManager.players_data["player_2"]["is_boss"] = false

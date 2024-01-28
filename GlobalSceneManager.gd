@@ -34,7 +34,6 @@ var keys_data = {
 }
 
 func boss_p1_mob_p2():
-	print("boss_p1_mob_p2")
 	keys_data = {
 		"boss": {
 			"up": "p1_up",
@@ -53,7 +52,6 @@ func boss_p1_mob_p2():
 	}
 	
 func mob_p1_boss_p2():
-	print("mob_p1_boss_p2")
 	keys_data = {
 		"boss": {
 			"up": "p2_up",

@@ -27,6 +27,5 @@ func _on_GameoverTimer_timeout():
 	emit_signal("game_over", winner)
 
 func _on_Countdown_countdown_over():
-	print("winner")
 	winner = "mob"
 	game_over()

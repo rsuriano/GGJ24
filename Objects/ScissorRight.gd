@@ -29,9 +29,7 @@ func _on_Timer_timeout():
 #	Player lose
 
 func _on_Area2D_body_entered(body):
-	print(body.name)
 	if body.name == 'Paper':
 		
-		print(get_parent())
 		body.get_parent().game_over()
 	pass # Replace with function body.

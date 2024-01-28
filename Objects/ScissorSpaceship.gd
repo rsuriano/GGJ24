@@ -42,7 +42,6 @@ func _process(_delta):
 			$Explosion.visible = true
 			$Explosion.init()
 			
-			print("THE ROCK EMPIRE WON")
 
 func _on_Area2D_body_entered(body):
 	if body.get_parent().name == "Meteors":
