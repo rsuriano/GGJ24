@@ -2,7 +2,9 @@ extends KinematicBody2D
 
 export (int) var rock_speed = 400
 
+var can_move = true
 var velocity = Vector2()
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,6 +24,19 @@ func get_input():
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	get_input()
+	if can_move:
+		get_input()
 	
-	velocity = move_and_slide(velocity)
+		if velocity.x != 0:
+			$piedra/piedra_anims.play("pidra_move")
+			
+			if velocity.x < 0 and $piedra.scale.x > 0:
+				$piedra.scale.x = -$piedra.scale.x
+			
+		if velocity.x > 0 and $piedra.scale.x < 0:
+			$piedra.scale.x = -$piedra.scale.x
+			
+		else:
+			$piedra/piedra_anims.stop()
+	
+		velocity = move_and_slide(velocity)

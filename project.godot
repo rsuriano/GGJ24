@@ -10,13 +10,13 @@ config_version=4
 
 [application]
 
-config/name="GGJAM2024"
+config/name="GGJ2024"
 run/main_scene="res://Scenes/MainScreen.tscn"
 config/icon="res://Assets/Sprites/icon.png"
 
-[autoload]
+[global]
 
-GlobalSceneManager="*res://GlobalSceneManager.gd"
+idioma=false
 
 [gui]
 
