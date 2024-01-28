@@ -87,7 +87,10 @@ func _deferred_goto_scene(path):
 
 func _on_game_over(winner): # boss mob
 	inputs_locked = false
-	goto_scene("res://Scenes/MainGame.tscn")
+	if(winner == "boss" and players_data["player_1"]["is_boss"] or winner == "mob" and not players_data["player_1"]["is_boss"]):
+		goto_scene("res://Scenes/MiniGameOutcome/P1Win.tscn")
+	else:
+		goto_scene("res://Scenes/MiniGameOutcome/P2Win.tscn")
 	
 func _ready():
 	var root = get_tree().root

@@ -25,6 +25,11 @@ var winnerToMiniGame = {
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	player_1_choice = ""
+	player_2_choice = ""
+	winner_player = ""
+	winner_figure = ""
+	
 	rng.randomize()
 	pass # Replace with function body.
 	$Timer.start()
@@ -92,9 +97,7 @@ func _process(delta):
 		GlobalSceneManager.players_data["player_2"].figure = player_2_choice
 		
 
-func show_results():
-#	print(player_1_choice, player_2_choice)
-	
+func show_results():	
 	$Title2.visible = false
 	
 	if player_1_choice == "rock":
@@ -118,20 +121,14 @@ func show_results():
 	$timerBuffer.start()
 
 func _on_Timer_timeout():
-	print("player1: ")
-	print(player_1_choice)
-	print("player2: ")
-	print(player_2_choice)
-	print("-----")
-	
 	if player_1_choice != "" and player_2_choice != "":
 		show_results()
 		$Timer/countdown.visible = false
 		
-#	else:
-#		$Timer.start()
-#		$Timer/countdown/countdown_anim.stop()
-#		$Timer/countdown/countdown_anim.play("countdown_anim")
+	else:
+		$Timer.start()
+		$Timer/countdown/countdown_anim.stop()
+		$Timer/countdown/countdown_anim.play("countdown_anim")
 
 func _on_timerBuffer_timeout():
 	start_mini_game(winnerToMiniGame[winner_player][winner_figure])
