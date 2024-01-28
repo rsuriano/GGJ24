@@ -30,6 +30,9 @@ func _input(_event):
 	if Input.is_action_just_pressed("p2_action"):
 		
 		if $"../Meteors".get_child_count() < MAXMETEOR:
+			$CannonSprite/canion_anim.stop()
+			$CannonSprite/canion_anim.play("canion_anim")
+			
 			meteor_instance = meteor.instance()
 			meteor_instance.init(rotation, $MeteorSpawner.position.rotated(rotation))
 			$"../Meteors".add_child(meteor_instance)
