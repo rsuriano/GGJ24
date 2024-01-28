@@ -1,10 +1,12 @@
 extends Node2D
 
+func new_game():
+	$Countdown/Timer.start()
+	
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$PaperMobs.connect("papermobs_collision_with_rock", self, "_on_papermobs_collision_with_rock")
-#	
-	pass # Replace with function body.
+	new_game()
 
 func game_over():
 	print("game_over")
