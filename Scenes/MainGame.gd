@@ -8,6 +8,8 @@ var winner_figure = ""
 
 var main_game_played = false
 
+var rng = RandomNumberGenerator.new()
+
 var winnerToMiniGame = {
 	"player_1": {
 		"rock": "res://Scenes/MiniGameInfo/RockGameInfo_P1P2.tscn",
@@ -23,6 +25,7 @@ var winnerToMiniGame = {
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	rng.randomize()
 	pass # Replace with function body.
 
 func start_mini_game(minigame):
@@ -30,9 +33,15 @@ func start_mini_game(minigame):
 
 func determineWinner():
 	if player_1_choice == player_2_choice:
-		winner_player = ""
-		player_1_choice = ""
-		player_2_choice = ""
+		var rnd = rng.randi_range(0, 1000)
+		print(rnd)
+		if rnd % 2 == 0:
+			winner_player = "player_1"
+			winner_figure = player_1_choice
+		else:
+			winner_player = "player_2"
+			winner_figure = player_2_choice
+		
 	elif (player_1_choice == "rock" and player_2_choice == "scissors") or (player_1_choice == "paper" and player_2_choice == "rock") or (player_1_choice == "scissors" and player_2_choice == "paper"):
 		winner_player = 'player_1'
 		winner_figure = player_1_choice
