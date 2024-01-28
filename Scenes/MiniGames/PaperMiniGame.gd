@@ -1,6 +1,6 @@
 extends Node2D
 
-signal game_over
+signal game_over(winner)
 
 func new_game():
 	pass
