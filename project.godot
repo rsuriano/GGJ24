@@ -10,9 +10,13 @@ config_version=4
 
 [application]
 
-config/name="GGJAM2024"
-run/main_scene="res://Scenes/MiniGames/ScissorsMiniGame.tscn"
+config/name="GGJ2024"
+run/main_scene="res://Scenes/MainScreen.tscn"
 config/icon="res://Assets/Sprites/icon.png"
+
+[global]
+
+idioma=false
 
 [gui]
 

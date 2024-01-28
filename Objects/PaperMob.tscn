@@ -1,26 +1,81 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Assets/Sprites/PaperMiniGame/paperPlane.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Sprites/PaperMiniGame/spritesheet avioncito.png" type="Texture" id=1]
 [ext_resource path="res://Objects/PaperMob.gd" type="Script" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 17.9092, 10.9497 )
+[sub_resource type="Animation" id=3]
+resource_name = "avion7_anim"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 2, 3, 4, 5, 6, 7 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Vector2( 30, 260 ), Vector2( -11, 176 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../CollisionPolygon2D:polygon")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ PoolVector2Array( 8, 19, 2, 7, 61, -90, 141, -46, 111, 2 ), PoolVector2Array( 8, 19, 2, 7, 81, -74, 145, -13, 113, 25 ), PoolVector2Array( -30.6, 21.2, -32.6, 5.2, 20.4, -73.8, 62.4, -12.8, 37.4, 25.2 ), PoolVector2Array( 157, -105, 68, -51, 18, -65, 46, -151, 157, -118 ), PoolVector2Array( 160, -61, 56, -39, 14, -65, 68, -139, 163, -76 ), PoolVector2Array( 145, -14, 40, -24, 11, -66, 83, -120, 153, -30 ), PoolVector2Array( 67, 36, 28, -60, 89, -85, 142, -54, 122, -4 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../CollisionPolygon2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0, 0 ), Vector2( -73, 26 ), Vector2( -58.4, 20.8 ), Vector2( -132, 88 ), Vector2( -68, 61 ), Vector2( -9, 53 ), Vector2( 0, 0 ) ]
+}
 
 [node name="PaperMob" type="RigidBody2D"]
-gravity_scale = 10.0
+position = Vector2( 0, 97 )
+gravity_scale = 0.0
 contacts_reported = 1
 contact_monitor = true
 script = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.999999, 1 )
-scale = Vector2( 1.00507, 1.00459 )
-shape = SubResource( 1 )
-
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -4.76837e-07, 0 )
-rotation = 1.5708
-scale = Vector2( 0.0383938, 0.0439855 )
+[node name="avion" type="Sprite" parent="."]
+position = Vector2( 30, 260 )
+scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )
+hframes = 4
+vframes = 4
+frame = 1
+
+[node name="avion_anim" type="AnimationPlayer" parent="avion"]
+autoplay = "avion7_anim"
+anims/avion7_anim = SubResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 8, 19, 2, 7, 61, -90, 141, -46, 111, 2 )
 
 [connection signal="body_entered" from="." to="." method="_on_PaperMob_body_entered"]
