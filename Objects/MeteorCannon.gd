@@ -20,14 +20,14 @@ func get_input():
 	velocity = Vector2()
 	rotation_dir = 0
 	
-	if Input.is_action_pressed('p2_right'):
+	if Input.is_action_pressed(GlobalSceneManager.keys_data["boss"]["right"]):
 		rotation_dir = 1
 		
-	if Input.is_action_pressed('p2_left'):
+	if Input.is_action_pressed(GlobalSceneManager.keys_data["boss"]["left"]):
 		rotation_dir = -1
 
 func _input(_event):
-	if Input.is_action_just_pressed("p2_action"):
+	if Input.is_action_just_pressed(GlobalSceneManager.keys_data["boss"]["action"]):
 		
 		if $"../Meteors".get_child_count() < MAXMETEOR:
 			$CannonSprite/canion_anim.stop()
