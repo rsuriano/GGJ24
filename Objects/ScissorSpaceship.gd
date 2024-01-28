@@ -50,3 +50,4 @@ func _on_Area2D_body_entered(body):
 func _on_explosion_anim_animation_finished(anim_name):
 	print(anim_name)
 	print("go to game over screen")
+	$"../GameoverTimer".start()

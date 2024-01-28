@@ -152,7 +152,12 @@ position = Vector2( 160, 40 )
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 2 )
 
+[node name="GameoverTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
 [connection signal="area_entered" from="Limits/MeteorBounds/up" to="." method="_on_up_area_entered"]
 [connection signal="body_entered" from="Limits/MeteorBounds/up" to="." method="_on_up_body_entered"]
 [connection signal="area_entered" from="Limits/MeteorBounds/down" to="." method="_on_up_area_entered"]
 [connection signal="body_entered" from="Limits/MeteorBounds/down" to="." method="_on_up_body_entered"]
+[connection signal="timeout" from="GameoverTimer" to="." method="_on_GameoverTimer_timeout"]

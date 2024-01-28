@@ -9,7 +9,7 @@ func _ready():
 	new_game()
 
 func game_over():
-	print("game_over")
+	$GameoverTimer.start()
 
 func _on_papermobs_collision_with_rock():
 	game_over()
@@ -17,3 +17,7 @@ func _on_papermobs_collision_with_rock():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+func _on_GameoverTimer_timeout():
+	get_tree().change_scene("res://Scenes/MainGame.tscn")	
+	pass # Replace with function body.

@@ -26,3 +26,7 @@ func _process(_delta):
 func _on_up_body_entered(body):
 	if body.name != "Dome":
 		body.queue_free()
+
+func _on_GameoverTimer_timeout():
+	get_tree().change_scene("res://Scenes/MainGame.tscn")
+	pass # Replace with function body.

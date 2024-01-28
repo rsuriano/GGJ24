@@ -47,5 +47,9 @@ papermob_scene = ExtResource( 5 )
 [node name="SpawnCooldownTimer" type="Timer" parent="PaperMobs"]
 wait_time = 0.5
 
+[node name="GameoverTimer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="body_entered" from="Floor" to="PaperMobs" method="_on_Floor_body_entered"]
 [connection signal="timeout" from="PaperMobs/SpawnCooldownTimer" to="PaperMobs" method="_on_SpawnCooldownTimer_timeout"]
+[connection signal="timeout" from="GameoverTimer" to="." method="_on_GameoverTimer_timeout"]
