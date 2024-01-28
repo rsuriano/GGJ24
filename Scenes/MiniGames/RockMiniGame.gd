@@ -1,6 +1,6 @@
 extends Node2D
 
-signal game_over
+signal game_over(winner)
 
 var winner = ""
 var spaceship_lives = 0
